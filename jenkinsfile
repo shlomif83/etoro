@@ -1,0 +1,16 @@
+pipeline {
+
+
+//for run on master
+     // Define agent details here
+    agent {label "master"}
+    stages{
+        stage('test'){
+            steps{
+                script{
+                    bat'dir'
+                }
+            }
+        }
+    }
+}
