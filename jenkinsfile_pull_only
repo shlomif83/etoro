@@ -13,8 +13,8 @@ pipeline {
 
         stage('call to run script job'){
             steps{
-                build job: 'run-script', parameters: [[$class: 'StringParameterValue', name: 'FIRAT_JOB_NAME', value: "${JOB_NAME}"],
-                 [$class: 'StringParameterValue', name: 'FIRAT_BUILD_NUMBER', value: "${BUILD_NUMBER}"]]
+                build job: 'run-script', parameters: [[$class: 'StringParameterValue', name: 'FIRST_JOB_NAME', value: "${JOB_NAME}"],
+                 [$class: 'StringParameterValue', name: 'FIRST_BUILD_NUMBER', value: "${BUILD_NUMBER}"]]
             }    
         }
     }
