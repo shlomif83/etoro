@@ -4,11 +4,15 @@ pipeline {
 //for run on master
      // Define agent details here
     agent {label "master"}
+    options {skipDefaultCheckout true}
     stages{
         stage('test'){
             steps{
                 script{
                     bat 'set'
+                    // def upstream = currentBuild.rawBuild.getCause(hudson.model.Cause$UpstreamCause)
+                    def causes = currentBuild.rawBuild.getCauses()
+                    bat "echo ${causes}"
                     // bat'python print_job_name.py'
                 }
             }
