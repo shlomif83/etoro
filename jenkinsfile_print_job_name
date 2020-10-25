@@ -9,11 +9,13 @@ pipeline {
         stage('print job name'){
             steps{
                 script{
-                    bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
+                    retry(3) {
+                        bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
+                    }
                 }
             }
         }
-        
+
         stage('run print the build number of the first job'){
             steps{
                 script{
