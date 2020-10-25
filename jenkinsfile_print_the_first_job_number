@@ -1,16 +1,13 @@
 pipeline {
 
-
-//for run on master
-     // Define agent details here
     agent {label "master"}
     options {skipDefaultCheckout true}
+
     stages{
         stage('test'){
             steps{
                 script{
-                    bat 'set'
-                    bat "echo ${FIRST_BUILD_NUMBER}"
+                    bat "echo build number of first job is ${FIRST_BUILD_NUMBER}"
                 }
             }
         }

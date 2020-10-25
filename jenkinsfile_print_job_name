@@ -1,10 +1,8 @@
 pipeline {
-
-
-//for run on master
-     // Define agent details here
+    
     agent {label "master"}
     options {skipDefaultCheckout true}
+
     stages{
         stage('print job name'){
             steps{

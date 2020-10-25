@@ -1,8 +1,5 @@
 pipeline {
 
-
-//for run on master
-     // Define agent details here
     agent {label "master"}
     stages{
         stage('pull code from SCM'){
