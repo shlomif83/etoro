@@ -10,7 +10,7 @@ pipeline {
             steps{
                 script{
                     bat 'set'
-                    bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
+                    // bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
                 }
             }
         }
