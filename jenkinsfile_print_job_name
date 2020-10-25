@@ -8,8 +8,8 @@ pipeline {
         stage('test'){
             steps{
                 script{
-                    // bat 'set'
-                    bat'python print_job_name.py'
+                    bat 'set'
+                    // bat'python print_job_name.py'
                 }
             }
         }

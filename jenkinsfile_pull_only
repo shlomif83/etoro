@@ -5,12 +5,16 @@ pipeline {
      // Define agent details here
     agent {label "master"}
     stages{
-        stage('test'){
+        stage('pull code from SCM'){
             steps{
-                script{
-                    bat'echo this job pull the code'
-                }
+                bat'echo this job pull the code'
             }
+        }
+
+        stage('call to run script job'){
+            steps{
+                build job: 'run-script'
+            }    
         }
     }
 }
