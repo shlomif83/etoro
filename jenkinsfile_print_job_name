@@ -10,7 +10,7 @@ pipeline {
             steps{
                 script{
                     bat 'set'
-                    // bat'python print_job_name.py'
+                    bat "python ..\\${env.FIRAT_JOB_NAME}\\print_job_name.py"
                 }
             }
         }
