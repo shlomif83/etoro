@@ -8,7 +8,8 @@ pipeline {
         stage('test'){
             steps{
                 script{
-                    bat'echo this job pull the code'
+                    // bat 'set'
+                    bat'python print_job_name.py'
                 }
             }
         }
