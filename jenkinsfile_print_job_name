@@ -17,7 +17,7 @@ pipeline {
         stage('run print the build number of the first job'){
             steps{
                 script{
-                    build job: 'print-first-job-number'
+                    build job: 'print-first-job-number', parameters: [name: 'FIRST_BUILD_NUMBER', value: "${FIRST_BUILD_NUMBER}"]]
                 }
             }
         }
