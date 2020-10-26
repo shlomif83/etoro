@@ -7,13 +7,17 @@ pipeline {
         stage('print job name'){
             steps{
                 script{
-                    try {
+                    // try {
                         retry(3) {
-                            bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
+                            try{
+                                bat "python ..\\${FIRST_JOB_NAME}\\print_job_name.py"
+                            }catch(Exception e){
+                                echo 'Exception occurred: ' + e.toString()
+                            }
                         }
-                    } catch (Exception e) {
-                        echo 'Exception occurred: ' + e.toString()
-                    }
+                    // } catch (Exception e) {
+                    //     echo 'Exception occurred: ' + e.toString()
+                    // }
                 }
             }
         }
